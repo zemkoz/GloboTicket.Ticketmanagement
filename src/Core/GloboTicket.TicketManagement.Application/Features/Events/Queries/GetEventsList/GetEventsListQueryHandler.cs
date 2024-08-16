@@ -5,7 +5,7 @@ using MediatR;
 
 namespace GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventsList;
 
-public class GetEventsListQueryHandler : IRequestHandler<GetEventsListQuery, List<EventListVm>>
+public class GetEventsListQueryHandler : IRequestHandler<GetEventsListQuery, List<EventVm>>
 {
     private readonly IAsyncRepository<Event> _eventRepository;
     private readonly IMapper _mapper;
@@ -16,9 +16,9 @@ public class GetEventsListQueryHandler : IRequestHandler<GetEventsListQuery, Lis
         _eventRepository = eventRepository;
     }
 
-    public async Task<List<EventListVm>> Handle(GetEventsListQuery request, CancellationToken cancellationToken)
+    public async Task<List<EventVm>> Handle(GetEventsListQuery request, CancellationToken cancellationToken)
     {
         var allEvents = (await _eventRepository.ListAllAsync()).OrderBy(x => x.Date);
-        return _mapper.Map<List<EventListVm>>(allEvents);
+        return _mapper.Map<List<EventVm>>(allEvents);
     }
 }

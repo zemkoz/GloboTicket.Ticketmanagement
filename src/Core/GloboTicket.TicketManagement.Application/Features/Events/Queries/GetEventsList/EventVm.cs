@@ -2,7 +2,7 @@
 
 namespace GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventsList;
 
-public class EventListVm
+public class EventVm
 {
     public Guid EventId { get; set; }
 
