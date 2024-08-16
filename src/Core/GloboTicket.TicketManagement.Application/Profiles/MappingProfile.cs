@@ -6,7 +6,7 @@ using GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventD
 using GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventsList;
 using GloboTicket.TicketManagement.Domain.Entities;
 
-namespace GloboTicket.TicketManagement.Application.Features.Profiles;
+namespace GloboTicket.TicketManagement.Application.Profiles;
 
 public class MappingProfile : Profile
 {

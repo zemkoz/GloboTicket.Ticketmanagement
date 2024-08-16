@@ -4,7 +4,7 @@ namespace GloboTicket.TicketManagement.Application.Exceptions
 {
     public class ValidationException : Exception
     {
-        public List<string> ValdationErrors { get; set; }
+        public List<string> ValdationErrors { get; }
 
         public ValidationException(ValidationResult validationResult)
         {
