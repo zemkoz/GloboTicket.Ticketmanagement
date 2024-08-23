@@ -14,6 +14,11 @@ public class EventRepository : BaseRepository<Event>, IEventRepository
     {
         return _dbContext.Events
             .AnyAsync(e => e.Name.Equals(name) && e.Date.Date.Equals(date.Date));
-        
+    }
+
+    public async Task<List<Event>> ListAllAsync()
+    {
+        return await _dbContext.Events
+            .ToListAsync();
     }
 }

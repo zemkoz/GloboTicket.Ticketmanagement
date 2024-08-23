@@ -1,6 +1,4 @@
-﻿using GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventDetail;
-
-namespace GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventsList;
+﻿namespace GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventsList;
 
 public class EventVm
 {
@@ -19,6 +17,4 @@ public class EventVm
     public string ImageUrl { get; set; }
 
     public Guid CategoryId { get; set; }
-
-    public CategoryDto Category { get; set; }
 }

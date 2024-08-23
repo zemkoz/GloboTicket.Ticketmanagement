@@ -18,7 +18,7 @@ public class BaseRepository<T> : IAsyncRepository<T> where T : class
             .FindAsync(id);
     }
 
-    public async Task<IReadOnlyList<T>> ListAllAsync()
+    public async Task<List<T>> ListAllAsync()
     {
         return await _dbContext.Set<T>().ToListAsync();
     }
