@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GloboTicket.TicketManagement.Application.Contracts.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace GloboTickets.TicketManagement.Persistence.Repositories;
 

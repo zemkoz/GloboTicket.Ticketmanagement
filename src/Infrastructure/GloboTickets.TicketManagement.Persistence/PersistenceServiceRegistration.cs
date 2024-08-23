@@ -13,9 +13,9 @@ public static class PersistenceServiceRegistration
         IConfiguration configuration)
     {
         services.AddDbContext<GloboTicketDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("GloboTicketManagementConnectionString")));
+            options.UseSqlite(configuration.GetConnectionString("GloboTicketManagement")));
 
-        services.AddScoped(typeof(Repositories.IAsyncRepository<>), typeof(BaseRepository<>));
+        services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IEventRepository, EventRepository>();
         services.AddScoped<IOrderRepository, OrderRepository>();

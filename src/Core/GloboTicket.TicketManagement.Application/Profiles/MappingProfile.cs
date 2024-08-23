@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GloboTicket.TicketManagement.Application.Features.Categories.Command.CreateCategory;
 using GloboTicket.TicketManagement.Application.Features.Categories.Queries.GetCategoriesList;
 using GloboTicket.TicketManagement.Application.Features.Categories.Queries.GetCategoriesListWithEvents;
 using GloboTicket.TicketManagement.Application.Features.Events.Commands.CreateEvent;
@@ -18,8 +19,9 @@ public class MappingProfile : Profile
 
         CreateMap<Category, CategoryVm>();
         CreateMap<Category, CategoryWithEventListVm>();
+        CreateMap<Event, CategoryEventDto>();
+        CreateMap<Category, CreatedCategoryVm>();
 
         CreateMap<Event, CreateEventCommand>();
     }
-    
 }

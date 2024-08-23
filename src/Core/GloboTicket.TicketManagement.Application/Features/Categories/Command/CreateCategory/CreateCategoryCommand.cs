@@ -2,7 +2,7 @@
 
 namespace GloboTicket.TicketManagement.Application.Features.Categories.Command.CreateCategory
 {
-    public class CreateCategoryCommand: IRequest<Guid>
+    public class CreateCategoryCommand: IRequest<CreatedCategoryVm>
     {
         public string Name { get; set; } = string.Empty;
     }
