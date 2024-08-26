@@ -1,4 +1,5 @@
-﻿using GloboTicket.TicketManagement.Application;
+﻿using GloboTicket.TicketManagement.Api.Middleware;
+using GloboTicket.TicketManagement.Application;
 using GloboTickets.TicketManagement.Infrastructure;
 using GloboTickets.TicketManagement.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,7 @@ public static class StartupExtensions
                     .AllowCredentials();
             });
         });
+        
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
@@ -34,6 +36,7 @@ public static class StartupExtensions
 
     public static WebApplication ConfigurePipeline(this WebApplication app)
     {
+        app.UseCors("open");
         if (app.Environment.IsDevelopment())
         {
             ResetDatabaseAsync(app);
@@ -41,7 +44,7 @@ public static class StartupExtensions
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-        app.UseCors("open");
+        app.UseCustomExceptionHandler();
         app.UseHttpsRedirection();
         app.MapControllers();
         

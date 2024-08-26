@@ -22,7 +22,7 @@ public class UpdateEventCommandHandler : IRequestHandler<UpdateEventCommand>
         var eventToUpdate = await _eventRepository.GetByIdAsync(request.EventId);
         if (eventToUpdate == null)
         {
-            throw new NotFoundException("Event", request.EventId);
+            throw new NotFoundException(nameof(Event), request.EventId);
         }
         _mapper.Map(request, eventToUpdate, typeof(UpdateEventCommand), typeof(Event));
         await _eventRepository.UpdateAsync(eventToUpdate);
